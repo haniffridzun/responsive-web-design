@@ -1,0 +1,159 @@
+<!-- all pages should begin with this. this special string is known as a declaration and ensures the browser tries to meet industry-wide specifications. -->
+<!DOCTYPE html>
+<!-- entire contents of the page are nested within an html element. all other elements must be descendants of this html element -->
+<!-- lang attribute with the value en to specify that the language of the page is English. -->
+<html lang="en">
+	<!-- important information goes inside head element -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- title element determines what browsers show in the title bar or tab for the page. -->
+		<title>CatPhotoApp</title>
+	</head>
+	<!-- all page content elements that should be rendered to the page go inside the body element. -->
+	<body>
+		<!-- h1 to h6 heading elements are used to signify the importance of content.	only use one h1 element per page -->
+		<h1>CatPhotoApp</h1>
+		<!-- HTML5 has elements that identify different content areas. it make your HTML easier to read and help with SEO and accessibility -->
+		<main>
+			<!-- make use of a section element to seperate the content from future content -->
+			<section>
+				<h2>Cat Photos</h2>
+				<!-- p element is used to create a paragraph of text -->
+				<p>
+					Click here to view more
+					<!-- link to another page with anchor element. link's text must be placed between opening and closing tags -->
+					<!-- add target attribute with the value _blank, so that the link opens in new tab -->
+					<a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.
+				</p>
+				<!-- turn image into a link by surrounding it with anchor element -->
+				<a href="https://freecatphotoapp.com">
+					<!-- add images using img element. it have an opening tag without a closing tag (self-closing tag). -->
+					<img
+						src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+						alt="a cute orange cat lying on its back"
+					/>
+				</a>
+			</section>
+			<section>
+				<h2>Cat Lists</h2>
+				<!-- when add a lower rank heading element, it's implied that you're starting a new subsection -->
+				<h3>Things cats love:</h3>
+				<!-- add unordered list element -->
+				<ul>
+					<!-- use list item elements to creat items in a list -->
+					<li>cat nip</li>
+					<li>laser pointers</li>
+					<li>lasagna</li>
+				</ul>
+				<!-- figure element represents self-contained content and will allow you to associate an image with a caption. -->
+				<figure>
+					<img
+						src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg"
+						alt="a slice of lasagna on a plate"
+					/>
+					<!-- figure caption element is used to add a caption to describe the image contained within the figure element -->
+					<figcaption>
+						Cats
+						<!-- emphasize the word by wrapping it in an emphasis element -->
+						<em>love</em> lasagna.
+					</figcaption>
+				</figure>
+				<h3>Top 3 things cats hate:</h3>
+				<!-- list items in an ordered list are numbered when displayed. -->
+				<ol>
+					<li>flea treatment</li>
+					<li>thunder</li>
+					<li>other cats</li>
+				</ol>
+				<figure>
+					<img
+						src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg"
+						alt="Five cats looking around a field."
+					/>
+					<figcaption>
+						Cats
+						<!-- strong element is used to indicate that some text is urgent -->
+						<strong>hate</strong> other cats.
+					</figcaption>
+				</figure>
+			</section>
+			<section>
+				<h2>Cat Form</h2>
+				<!-- add web form to collect information from users. action attribute indicates where form data should be sent -->
+				<form action="https://freecatphotoapp.com/submit-cat-photo">
+					<!-- input element allows several ways to collect data from a web form. input elements are self-closing. -->
+					<!-- there are many kinds of inputs you can create using the type attribute. -->
+					<!-- for a form's data to be accessed by the location specified in the action attribute, you must give the text field a name attribute and assign it a value -->
+					<!-- placeholder text is used to give hint about what kind of information to enter into an input -->
+					<!-- to prevent user from submitting form when required information is missing, you need to add required attribute. -->
+					<input
+						type="text"
+						name="catphotourl"
+						placeholder="cat photo URL"
+						required
+					/>
+					<!-- use button element to create a clickable button. default behavior of clicking a form button without any attributes submits the form to location specified in form's action attribute. -->]
+					<!-- button elements are inline elements, which don't appear on new lines. -->
+					<button type="submit">Submit</button>
+					<!-- fieldset element is used to group related inputs and labels together in a web form. it's block-level elements, meaning that it appear on a new line. -->
+					<fieldset>
+						<!-- legend element acts as a caption for the content in the fieldset element. it gives users context about what they should enter into that part of the form. -->
+						<legend>Is your cat an indoor or outdoor cat?</legend>
+						<!-- label elements are used to help associate the text for an input elemenet with input element itself. clicking the word also selects the corresponding radio button -->
+						<label for="">
+							<!-- use radio buttons for questions where you want only one answer out of multiple options. -->
+							<!-- id attritubes is used to identify specific HTML elements. id attribute's value must be unique for entire page -->
+							<!-- to make a checkbox checked or radio button selected by default, you need to add the checked attribute to it. -->
+							<input
+								type="radio"
+								id="indoor"
+								name="indoor-outdoor"
+								value="indoor"
+								checked
+							/>
+							Indoor
+						</label>
+						<label for="">
+							<!-- to make it selecting one radio button automatically deselects the other, both buttons must have a name attribute with the same value -->
+							<!-- if radio buttons do not have a value attribute, the form data will include indoor-outdoor=on, which is not useful -->
+							<!-- add value attribute to each radio buttons, set the button's value attributes to the same value as its id attribute -->
+							<input
+								type="radio"
+								id="outdoor"
+								name="indoor-outdoor"
+								value="outdoor"
+							/>
+							Outdoor
+						</label>
+					</fieldset>
+					<fieldset>
+						<legend>What's your cat's personality?</legend>
+						<!-- forms commonly use checkbox for questions that may have more than one answer. -->
+						<!-- there's another way to associate an input element's text with the element itself. -->
+						<!-- you can nest the text within a label element and add a for attribute with the same value as the input element's id attribute -->
+						<!-- to make a checkbox checked or radio button selected by default, you need to add the checked attribute to it. -->
+						<input type="checkbox" id="loving" name="personality" value="loving" checked/><label
+							for="loving"
+							>Loving</label
+						>
+						<!-- like radio buttons, form data for seleted checkboxes are name/value attribute pairs. while the value attribute is optional, it's best practice to include it -->
+						<!-- add a value attribute to each checkbox. for convenience, set each checkbox's value attribute to the same value as its id attribute. -->
+						<input type="checkbox" id="lazy" name="personality" value="lazy"/><label]
+							for="lazy"
+							>Lazy</label
+						>
+						<input type="checkbox" id="energetic" name="personality" value="energetic"/><label
+							for="energetic"
+							>Energetic</label
+						>
+					</fieldset>
+				</form>
+			</section>
+		</main>
+		<footer>
+			<p>No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a></p>
+		</footer>
+	</body>
+</html>
