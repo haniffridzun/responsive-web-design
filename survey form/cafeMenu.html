@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- elements inside head element provide extra information not visible on the web page, but it is useful for search engines or how the page gets displayed. -->
+		<!-- utf-8 tell the browser how to encode characters for the page -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- styling of the page to look similar on mobiles as it does on desktop -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cafe Menu</title>
+		<!-- add style to an element by specifying in the style element and setting property for it -->
+		<style>
+			/* use type selector to style the h1 element */
+			h1 {
+				/* align text element using text-align property */
+				text-align: center;
+			}
+			/* add the same group of styles to many elements by creating a list of selectors, each separated with commas */
+			h2,
+			p {
+				text-align: center;
+			}
+			/* there will be many more styles, it's best to put all the styles in a separate file and link to it. */
+		</style>
+		<!-- link to external css file -->
+		<link rel="stylesheet" href="style-cafeMenu.css" />
+	</head>
+	<body>
+		<!-- div element is used mainly for design layout purposes -->
+		<!-- apply class's styling to element, add a class attribute to the element and set its value to class-name -->
+		<div class="menu">
+			<!-- nest elements in group / category -->
+			<header>
+				<h1>CAMPER CAFE</h1>
+				<p class="established">Est. 2020</p>
+			</header>
+			<!-- you can use hr element to display a divider between sections of different content -->
+			<hr />
+			<main>
+				<section>
+					<h2>Coffee</h2>
+					<img src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg" alt="coffee icon">
+					<!-- article elements commonlly contain multiple elements that have related information. -->
+					<!-- in this case, it will contain a coffee flavor and price for that flavor. -->
+					<article class="item">
+						<p class="flavor">French Vanilla</p>
+						<p class="price">3.00</p>
+					</article>
+					<!-- the flavors and prices are currently stacked on top of each other and centered with their respective p elements. -->
+					<!-- it would be nice if the flavor was on the left and the price was on the right -->
+					<article class="item">
+						<p class="flavor">Caramel Macchiato</p>
+						<p class="price">3.75</p>
+					</article>
+					<!-- p elements are block-level elements, so they take up the entire width of their parent element. -->
+					<!-- to get them on the same lien, you need to apply some styling to the elements, so they behave like inline elements. -->
+					<article class="item">
+						<p class="flavor">Pumpkin Spice</p>
+						<p class="price">3.50</p>
+					</article>
+					<article class="item">
+						<p class="flavor">Hazelnut</p>
+						<p class="price">4.00</p>
+					</article>
+					<article class="item">
+						<p class="flavor">Mocha</p>
+						<p class="price">4.50</p>
+					</article>
+				</section>
+				<section>
+					<h2>Desserts</h2>
+					<img src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg" alt="pie icon">
+					<article class="item">
+						<p class="dessert">Donut</p>
+						<p class="price">1.50</p>
+					</article>
+					<article class="item">
+						<p class="dessert">Cherry Pie</p>
+						<p class="price">2.75</p>
+					</article>
+					<article class="item">
+						<p class="dessert">Cheesecake</p>
+						<p class="price">3.00</p>
+					</article>
+					<article class="item">
+						<p class="dessert">Cinnamon Roll</p>
+						<p class="price">2.50</p>
+					</article>
+				</section>
+			</main>
+			<hr class="bottom-line" />
+			<footer>
+				<p>
+					<a href="https://www.freecodecamp.org" target="_blank"
+						>Visit our website</a
+					>
+				</p>
+				<p class="address">123 Free Code Camp Drive</p>
+			</footer>
+		</div>
+	</body>
+</html>

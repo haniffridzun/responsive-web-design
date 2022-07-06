@@ -1,0 +1,177 @@
+body {
+	/* add background to the page */
+	background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+	/* change all the text in your body, by adding a font-family property */
+	font-family: sans-serif;
+	/* to create a little more room around the menu, add 20px of space on the inside of the body element using padding property */
+	padding: 20px;
+}
+
+/* it is a bit boring for all the text to have the same font-family. you can still have the majority of the text sans-serif and make just h1 and h2 elements using different font-family */
+h1,
+h2 {
+	/* add the fallback font - fallbacks are used in instances where the initial is not found / available */
+	font-family: Impact;
+}
+
+/* make Est. 2020 text italicized by using font-style property with value italic */
+.established {
+	font-style: italic;
+}
+
+.address {
+	margin-bottom: 5px;
+}
+
+/* typography of heading elements is set by default values of users' browsers. */
+h1 {
+	font-size: 40px;
+	/* browser having some default margin for h1 element. */
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+/* image is not centered horizontally like the coffee heading above it. */
+/* img elements are like inline elements. */
+/* to make the image behave like heading elements (which are block-level), create an img type selector and use the value block for the display property */
+/* and use margin-left and right values to center it horizontally */
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	/* it would be nice if the vertical space between the h2 elements and their associated icons was smaller. */
+	/* the h2 elements have default top and bottom margin space, so you could change the bottom margin of the h2 to say 0 or another number */
+	/* but there is an easier way, simply add a negative top margin to the img elements to pull them up from their current positions. */
+	margin-top: -25px;
+}
+
+/* default properties of an hr element will make it appear as a thin light grey line */
+/* you can change the height of the line by specifying a value for the height property */
+hr {
+	height: 3px;
+	background: brown;
+	/* notice the grey color along the edges of the line. those edges are known as borders. */
+	/* each side of an element can have a different color or they can all be the same. */
+	/* make all the edges of the hr element the same color as the background using the border-color property */
+	border-color: brown;
+	/* notice how the thickness of the line looks bigger? the default value of a property named border-width is 1px for all edges */
+	/* by changing the border to the same color as the background, the total height of the line is 5px (3px plus the top and bottom border width of 1px */
+	/* change the height property of the hr to be 2px, so the total height of it becomes 4px */
+	height: 2px;
+}
+
+div {
+	/* make the div nov take up the entire width of the page. */
+	width: 300px;
+	background-color: burlywood;
+	/* make it 80% the width of its parent element (body) */
+	width: 80%;
+	/* center the div horizontally using margin-left and margin-right properties to auto */
+	/* think of the margin as invisible space around the element. */
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* class selector is defined by a name with a dot directly in front of it */
+/* apply class's styling to element, add a class attribute to the element and set its value to class-name */
+.menu {
+	background-color: burlywood;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	/* give some space between the content and the sides with various padding properties */
+	padding-left: 20px;
+	padding-right: 20px;
+	/* add some 20px padding to the top and bottom of the menu */
+	padding-top: 20px;
+	padding-bottom: 20px;
+	/* sincec all 4 sides of the menu have the same internal spacing, we can use a single padding property */
+	padding: 20px;
+	/* current width of the menu will always take up 80% of the body element's width. */
+	/* on the very wide screen, the coffee and dessert appear far apart from their prices. */
+	/* add a max-width property to the menu class with a value of 500px to prevent it from growing too wide */
+	max-width: 500px;
+}
+
+/* set text-align property to left for flavor class*/
+.flavor {
+	text-align: left;
+}
+
+/* set text-align property to right for price class */
+.price {
+	text-align: right;
+}
+
+/* p elements are nested in an article element with class attribute of item. */
+/* you can style all the p elements nested anywhere in elements with a class named item */
+.item p {
+	display: inline-block;
+	/* focusing on the menu items and prices, there is fairly large gap between each line. */
+	/* target all the p elements nested in elements with the class named item and set their top and bottom margin to be 5px */
+	margin-top: 5px;
+	margin-bottom: 5px;
+	/* make the font size of items and prices larger */
+	font-size: 18px;
+}
+/* changing the margin-bottom to 5px look great. however, now the space between the Cinnamon Roll and the second hr element does not match the space between the top hr and Coffee heading */
+/* add some more space by creating a class named bottom-line using 25px for the margin-top property */
+.bottom-line {
+	margin-top: 25px;
+}
+
+/* however, the price didn't stay over on the right. this because inline-block elements only take up the width of their content. */
+/* to spread them out, add a width property to the flavor and price class selectors that have a value of 50% each */
+.flavor,
+.price {
+	width: 50%;
+	/* still did not work. styling the p elements as inline-block and placing them on separate lines in the code creates an extra space to the right of the first p element, */
+	/* causing the second one to shift to the next line. one way to fix this is to make each p element's width a little less then 50% */
+	width: 49%;
+	/* that worked, but there is still a little space on the right of the price. you could keep trying various percentage for the widhts. */
+	/* instead, simply move the price p element to be on the same line and make sure there is no space between them */
+	/* now go ahead and change both flavor and price class' widths to be 50% again. */
+	width: 50%;
+}
+
+/* if you make the width of the page preview smaller, you will notice at some point, some of the text on the left starts wrapping around to the next line. */
+/* this is because the width of the p elements on the left side can only take up 50% of the space. */
+/* since you know the prices on the right have fewer characters, change the flavor class width value to 75% and price class width 25% */
+.flavor {
+	width: 75%;
+}
+.price {
+	width: 25%;
+}
+.dessert {
+	text-align: left;
+	width: 75%;
+}
+
+/* FOOTER */
+footer {
+	font-size: 14px;
+}
+
+/* the default color of a link that has not yet been clicked on is blue. */
+/* the default color of a link that has already been visited from a page is purple. */
+/* to make the links the same color regardless if a link has been visited */
+a {
+	color: black;
+}
+/* change properties of a link when the link has been visited by using pseudo-selector :: visited*/
+a:visited {
+	color: grey;
+}
+/* change properties of a link when the mouse hovers over them by using pseudo-selector :: hover */
+a:hover {
+	color: brown;
+}
+/* change properties of a link when the link is being clicked using pseudo-selector :: active */
+a:active {
+	color: white;
+}
