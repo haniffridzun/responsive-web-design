@@ -1,0 +1,116 @@
+body {
+	width: 100%;
+	height: 100vh;
+	/* remove horizontal scroll-bar, by setting the body default margin added by some browsers to 0 */
+	margin: 0;
+	/* make the background easy on the eyes */
+	background-color: #1b1b32;
+	/* change the text color for every elements inside body element */
+	color: #f5f6f7;
+	font-family: Tahoma;
+	font-size: 16px;
+}
+/* label elements are inline by default, they appear on the same line as the text they are labelling */
+label {
+	/* to make them appear on separate lines, add display: block */
+	display: block;
+	/* separate them from each other */
+	margin: 0.5rem 0;
+}
+
+h1,
+p {
+	/* center elements */
+	margin: 1em auto;
+	/* align text in the center */
+	text-align: center;
+}
+
+form {
+	/* center form element */
+	margin: 0 auto;
+	/* fix its size to max width of 500px */
+	max-width: 500px;
+	/* fix min width of 300px */
+	min-width: 300px;
+	/* in between that range, allow it to have a width of 60vw */
+	width: 60vw;
+	/* add padding between submit button at the bottom of the form element. */
+	padding-bottom: 2em;
+}
+
+/* during development, it is useful to see the fieldset default borders. however, they make the content appear too separated. */
+fieldset {
+	/* remove the border */
+	border: none;
+	padding: 2rem 0;
+}
+
+/* give the fieldset elements a bit of separation, select all but the last fieldset element */
+fieldset:not(:last-of-type) {
+	border-bottom: 3px solid #3b3b4f;
+}
+
+input,
+textarea,
+select {
+	/* make label text appear above the form elements. */
+	/* make them take up the full width of their parent elements */
+	width: 100%;
+	margin: 10px 0 0 0;
+	/* make all 3 element types have the same min-height value */
+	/* while select element still has white background */
+	min-height: 2em;
+}
+
+/* in second fieldset, you want the input and label text to appear on the same line. */
+.inline {
+	/* remove the earlier rule which set all the input elements to width:100% */
+	width: unset;
+	/* add some space between the .inline elements and the label text, by giving a rightt margin of 0.5em */
+	margin: 0 0.5em 0 0;
+	/* if you look close enough, you will notice the .inline elements are too high on the line */
+	vertical-align: middle;
+}
+
+/* make the input and textarea elements blend in with the background theme */
+input,
+textarea {
+	background-color: #0a0a23;
+	border: 1px solid #0a0a23;
+	/* if you type in the input or textarea elements, you will not be able to see the text */
+	/* also their height is too small to be easy to use */
+	color: #ffffff;
+	/* min-height: 2em; */
+}
+
+/* style the submit button */
+/* style submit button using attribute selector, which selects an element based on the given attribute value. */
+input[type="submit"] {
+	display: block;
+	width: 60%;
+	/* with display of block the submit button sits flush against the left edge of its parent */
+	/* center the submit button */
+	/* change the margin property to include 1em on top and bottom */
+	margin: 1em auto;
+	/* make submit bottom look more in line with the rest of the form, give it the same height as other fields and increase the font size */
+	height: 2em;
+	font-size: 1.1rem;
+	/* make submit bottom appear more distinct */
+	background-color: #3b3b4f;
+	border-color: white;
+	/* separate it from the fieldset above, and adjust its width to never be below 300px */
+	min-width: 300px;
+}
+
+/* most browser inject their own default CSS properties and values for different elements. */
+/* you might notice the file input is smaller than the other text input elements. */
+/* style the input with type file to be the same padding as the other input elements. */
+input[type="file"] {
+	padding: 1px 2px;
+}
+
+/* change the text color of the link */
+a {
+	color: #dfdfe2;
+}
