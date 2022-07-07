@@ -1,0 +1,236 @@
+h1 {
+	text-align: center;
+}
+
+.marker {
+	background-color: red;
+	/* notice that your marker doesn't seem to have color. */
+	/* the background color was actually applied, but since the marker div element is empty, */
+	/* it doesn't have any width or height by default. */
+	width: 200px;
+	height: 25px;
+	/* easy way to centered the div on the page is with margin shorthand property */
+	/* set its margin property to auto. this sets all side; top, right, bottom, left to auto */
+	margin: 10px auto;
+}
+
+/* two main color models: */
+/* 1-additive RGB (red, green, blue) */
+/* 2-subtractive CMYK (cyan, magenta, yellow, black) */
+
+/* RGB color model is additive - means that colors begin as black, and change as different levels of red, green, blue are introduced */
+.container {
+	background-color: rgb(0, 0, 0);
+	/* add more vertical space between markers and the edge of the container element they're in */
+	padding: 10px 0;
+}
+/* function is a piece of code that can take an input and perform a specific action. */
+/* css rgb function accepts values, or arguments, for red, green, blue and produces a color */
+/* each red, green, blue value is a number from 0 to 255. 0 means that there's 0% of that color - black */
+/* 255 means that there's 100% of that color - red / green / blue */
+.one {
+	background-color: rgb(255, 0, 0);
+}
+.two {
+	background-color: rgb(0, 255, 0);
+}
+.three {
+	background-color: rgb(0, 0, 255);
+}
+/* primary colors */
+/* are colors that, when combined, create a pure white. */
+.container {
+	background-color: rgb(255, 255, 255);
+}
+/* secondary colors */
+/* are the colors you get when combine you primary colors. */
+.one {
+	/* red + green = yellow */
+	background-color: rgb(255, 255, 0);
+}
+.two {
+	/* green + blue = cyan */
+	background-color: rgb(0, 255, 255);
+}
+.three {
+	/* red + blue = magenta */
+	background-color: rgb(255, 0, 255);
+}
+/* tertiary colors */
+/* are created by combining a primary with a nearby secondary color. */
+.one {
+	/* red + half-green = orange */
+	background-color: rgb(255, 127, 0);
+}
+.two {
+	/* green + half-blue = spring green */
+	background-color: rgb(0, 255, 127);
+}
+.three {
+	/* blue + half-red = violet */
+	background-color: rgb(127, 0, 255);
+}
+.one {
+	/* half-red + green = chartreuse green */
+	background-color: rgb(127, 255, 0);
+}
+.two {
+	/* half-green + blue = azure */
+	background-color: rgb(0, 127, 255);
+}
+.three {
+	/* red + half-blue = rose */
+	background-color: rgb(255, 0, 127);
+}
+/* a color wheel is a cirle where similar colors, or hues, are near each other, and different ones are further apart. */
+/* two colors that are opposite from each other on the color wheel are called complementary colors. */
+/* if two complementary colors are combined, they produce gray. but when they are placed side-by-side, */
+/* these colors produce strong visual constrast and appear brighter. */
+.one {
+	background-color: rgb(255, 0, 0);
+}
+.two {
+	background-color: rgb(0, 255, 255);
+}
+.three {
+	background-color: rgb(0, 0, 0);
+}
+/* notice that the red and cyan colors are very bright right next to each other. */
+/* this constrast can be distracting if it's oversused, and can make text hard to read */
+/* it's better to choose one color as the dominant color, and use its complementary color as an accent to bring attention to certain content on page */
+h1 {
+	background-color: rgb(0, 255, 255);
+}
+.one {
+	background-color: rgb(0, 0, 0);
+}
+.two {
+	background-color: rgb(255, 0, 0);
+}
+/* notice how your eyes are naturally drawn to the red color in the center. */
+/* when designing a site, you can use this effect to draw attention to important headings, button, or links. */
+
+/* common way to apply color to an element with CSS is with hexadecimal / hex values / base 16 values. */
+/* hex color values start with # character and take 6 characters from 0-9 and A-F. */
+/* 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F */
+/* the first pair of characters represent red, the second pair represent green, and the third pair represent blue */
+/* 00 is 0% of that colors, and FF is 100% */
+.green {
+	background-color: #007f00;
+}
+
+/* HSL color model, or hue, saturation, and lightness, is another way to represent colors. */
+/* hsl function accepts 3 values: number from 0 to 360 for hue, 0 to 100 for saturation, and percentage from 0 to 100 for lightness */
+/* on color wheel, the hue red is 0 deg, green 120 deg, and blue is at 240 deg */
+/* saturation is the intensity of a color from 0% or gray, to 100% for pure color */
+/* lightness is how bright a color appears, from 0% or complete black, to 100% complete white, with 50% being neutral */
+.blue {
+	background-color: hsl(240, 100%, 50%);
+}
+
+/* gradient is when one color transitions into another. CSS linear-gradient function lets you control the direction of the transition aling a line, and which colors are used */
+/* linear-gradient function actually creates an image element, and is usually paired with the background property which can accept an image as a value */
+.red {
+	/* while linear-gradient function needs minimum of two colors to work, it can accept many color arguments. */
+	background: linear-gradient(
+		90deg,
+		/* color-stops allow you to fine-tune where colors are placed along the gradient line. */
+			rgb(255, 0, 0) 75%,
+		rgb(0, 255, 0),
+		rgb(0, 0, 255)
+	);
+}
+
+/* make realistic marker */
+.red {
+	background: linear-gradient(
+		180deg,
+		rgb(122, 74, 14) 0%,
+		rgb(245, 62, 113) 50%,
+		rgb(162, 27, 27) 100%
+	);
+}
+.green {
+	/* if no gradientDirection is provided to linear-gradient function, it arranges colors from top to bottom by default */
+	/* even without the color-stops, you might have notices that the colors for each transition at the same points as the red marker. */
+	/* linear-gradient function automatically calculates these values for you, and places colors evenly along the gradient line by default. */
+	/* first 0%, middle 50%, last 100% of the gradient line. */
+	background: linear-gradient(#55680d, #71f53e, #116c31);
+}
+.blue {
+	background: linear-gradient(
+		hsl(186, 76%, 16%),
+		hsl(223, 90%, 60%),
+		hsl(240, 56%, 42%)
+	);
+}
+.sleeve {
+	width: 110px;
+	height: 25px;
+	background-color: white;
+	/* opacity describes how opaque, or non-transparent, something is. no light can pass through it. */
+	/* with CSS opacity property, you can control how opaque or transparent an element is. */
+	/* with value 0, or 0% the element will be completely transparent, and at 1 or 100% the element will be completely opaque, by default, each element is opaque */
+	opacity: 0.5;
+	/* another way to set the opacity for an element is using alpha channel. */
+	/* to add an alpha channel to an rgb color, use the rgba function */
+	background-color: rgba(255, 255, 255, 50%);
+}
+.cap {
+	width: 60px;
+	height: 25px;
+}
+
+.sleeve,
+.cap {
+	/* position elements on the same line */
+	display: inline-block;
+}
+.sleeve {
+	/* all HTML elements have borders, though they're usually set to none by default. */
+	/* CSS can control all aspects of an element's border. for a border to be visible, you need to set its width and style */
+	border-left-width: 10px;
+	/* borders have several styles to choose from - solid line, dashed or dotted line, more */
+	border-left-style: solid;
+	/* if not color is set, black is used by default */
+	/* to make code more readable, it's better to set the border color explicitly */
+	border-left-color: black;
+	/* border-left shorthand property lets you to set the left border's width, style, and color at the same time */
+	/* border-left: width style color; */
+	border-left: 10px double rgba(0, 0, 0, 75%);
+}
+
+/* last thing you'll do is add a slight shadow to each marker to make them look even more realistic */
+/* box-shadow property lets you apply one or more shadows around an element. */
+/* box-shadow: offsetX offsetY color; */
+.red {
+	box-shadow: 5px 5px red;
+	/* as you can see, you added a simple red shadow around your marker that's 5px to the right, and 5px down. */
+	/* but what if you want to position your shadow on the opposite side? you can do that by using negative values for each offset */
+	box-shadow: -5px -5px red;
+}
+.green {
+	/* notice that the edges of the shadow are sharp. this is because there is an optional blurRadius value for box-shadow property */
+	/* box-shadow: offsetX offsetY blurRadius color; */
+	/* it defaults to 0 and produces sharp edges. the higher the value of blurRadius, the greater the blurring effect is */
+	box-shadow: 5px 5px 5px green;
+}
+.blue {
+	/* what if you wanted to expand the shadow out further? you can do that with the optional spreadRadius value */
+	/* box-shadow: offsetX offsetY blurRadius spreadRadius color; */
+	/* defaults to 0 if it isn't included. */
+	box-shadow: 0 0 0 5px blue;
+}
+
+/* finalize shadows */
+.red {
+	box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+}
+.green {
+	/* hex color 3b for red, 7e for green, 20 for blue, cc for alpha channel */
+	box-shadow: 0 0 20px 0 #3b7e20cc;
+}
+.blue {
+	/* using hsla function, use values 223 for hue, 59% for saturation, 31% for lightness, 0.8 for alpha channel */
+	box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8);
+}
