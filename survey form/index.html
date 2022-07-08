@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Survey Form</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<h1 id="title">Survey Form</h1>
+		<p id="description">Short demographic survey among internet user.</p>
+		<form action="" id="survey-form">
+			<div>
+			<!-- name input -->
+			<label for="name" id="name-label">Username:
+				<input type="text" id="name" required placeholder="Your name" />
+			</label>
+			<!-- email input -->
+			<label for="email" id="email-label">Email:
+				<input type="email" id="email" required placeholder="Email address" />
+			</label>
+			</div>
+			<div>
+			<!-- number input -->
+			<label for="number" id="number-label">Age:
+				<input type="number" id="number" placeholder="Only for 14 to 100 years old" min="14" max="100" />
+			</label>
+			<!-- favorite internet browser -->
+			<select name="" id="dropdown">
+				<option value="">Favorite browser...</option>
+				<option value="chrome">Google Chrome</option>
+				<option value="firefox">Mozilla Firefox</option>
+				<option value="edge">Microsoft Edge</option>
+				<option value="safari">Safari</option>
+				<option value="opera">Opera</option>
+				<option value="brave">Brave</option>
+				<option value="">Other</option>
+			</select>
+			</div>
+			<hr>
+			<!-- current region -->
+			<p>Current region living</p>
+			<label for="">
+				<input type="radio" name="radio-group" value="africa" class="inline"/> Africa
+			</label>
+			<label for="">
+				<input type="radio" name="radio-group" value="americas" class="inline"/> Americas
+			</label>
+			<label for="">
+				<input type="radio" name="radio-group" value="eastern-mediterranean" class="inline"/> Eastern Mediterranean
+			</label>
+			<label for="">
+				<input type="radio" name="radio-group" value="europe" class="inline"/> Europe
+			</label>
+			<label for="">
+				<input type="radio" name="radio-group" value="south-east-asia" class="inline"/> South-East Asia
+			</label>
+			<label for="">
+				<input type="radio" name="radio-group" value="western-pasific" class="inline"/> Western Pasific
+			</label>
+			<hr>
+			<!-- familiar operating system -->
+			<p>Familiar operating system</p>
+			<label for="">
+				<input type="checkbox" value="windows" name="" id="" class="inline"/> Microsoft Windows
+			</label>
+			<label for=""> <input type="checkbox" value="macos" name="" id="" class="inline"/> Apple MacOS </label>
+			<label for=""> <input type="checkbox" value="linux" name="" id="" class="inline"/> GNU/Linux </label>
+			<label for="">
+				<input type="checkbox" value="chromeos" name="" id="" class="inline"/> ChromeOS
+			</label>
+			<hr>
+			<!-- open ended section -->
+			<p>Summary of day job</p>
+			<textarea name="" id="" cols=30" rows="4" placeholder="I always..."></textarea>
+			<!-- submit button -->
+			<input type="submit" id="submit" value="Submit" />
+		</form>
+	</body>
+</html>
