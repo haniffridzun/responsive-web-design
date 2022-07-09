@@ -1,0 +1,95 @@
+/* even div has not text, it's still treated as a box with content */
+.canvas {
+	width: 500px;
+	height: 600px;
+	background-color: #4d0f00;
+}
+
+.frame {
+	border: 50px solid black;
+	width: 500px;
+	/* use padding to adjust the spacing within an element */
+	padding: 50px;
+	/* use margin to adjust the spacing outside of an element */
+	margin: 20px auto;
+}
+
+.one {
+	width: 425px;
+	height: 150px;
+	background-color: #efb762;
+	margin: 20px auto;
+}
+
+.canvas {
+	/* padding: 1px; */
+	/* however, adding 1px of padding to the top, bot, left, right of the canvas changed its dimensions to 502px x 602px */
+	/* instead, use overflow to change the canvas back to its original dimensions */
+	overflow: hidden;
+}
+
+.two {
+	width: 475px;
+	height: 200px;
+	background-color: #8f0401;
+	margin: auto;
+}
+
+.three {
+	/* you don't always have to use px when sizing an element, */
+	width: 91%;
+	height: 28%;
+	background-color: #b20403;
+	margin: auto;
+}
+
+/* it's helpful to have your margins push in one direction. */
+/* in this case, the bottom margin of the .one element pushes .two down 20px */
+.two {
+	/* remove its top margin, horizontally center it, and set its bottom margin to 20px */
+	margin: 0 auto 20px auto;
+}
+
+/* the colors and shapes of painting are too sharp to pass as a rothko */
+.canvas {
+	filter: blur(2px);
+}
+
+/* increase the blur for .one and .two */
+.one,
+.two {
+	filter: blur(1px);
+}
+
+/* increase the blur for .three */
+.three {
+	filter: blur(2px);
+}
+
+/* the rectangles are too small and their edges don't have the soft quality of a painting */
+/* increases the area and soften the edges */
+.one {
+	box-shadow: 0 0 3px 3px #efb762;
+	border-radius: 9px;
+}
+.two {
+	box-shadow: 0 0 3px 3px #8f0401;
+	/* set top-left and bot-right 8px, top-right and bot-left 10px */
+	border-radius: 8px 10px;
+}
+.three {
+	box-shadow: 0 0 5px 5px #b20403;
+	/* border-radius property accepts up to 4 values to round each corners */
+	border-radius: 30px 25px 60px 12px;
+}
+
+/* rotate each rectangle to give them more of an imperfect, hand-painted look */
+.one {
+	transform: rotate(-0.6deg);
+}
+.two {
+	transform: rotate(0.4deg);
+}
+.three {
+	transform: rotate(-0.2deg);
+}
