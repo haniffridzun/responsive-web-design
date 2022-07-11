@@ -1,0 +1,111 @@
+/* be default the browser includes the border and padding when determining an element's size */
+/* to solve this, reset the box model */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+html {
+	font-size: 16px;
+}
+
+.label {
+	/* group and prioritize content */
+	border: 2px solid black;
+	/* white space can bring focus to the important elements of your page, and help guide user's eyes through your text */
+	width: 270px;
+	margin: 20px auto;
+	padding: 0 7px;
+}
+
+/* specifically target h1 within header */
+header h1 {
+	/* make text bolder */
+	/* font-weight: 800; */
+	/* center the text */
+	text-align: center;
+	margin: -4px 0;
+	/* adjust the space between each character of text */
+	letter-spacing: 0.15px;
+}
+
+p {
+	margin: 0;
+}
+
+.divider {
+	border-bottom: 1px solid #888989;
+	margin: 2px 0;
+	/* give clear prooperty set to right. this will clear the float property, pushing the divider and any following content down below the float text */
+	clear: right;
+}
+
+.bold {
+	font-weight: 800;
+}
+
+/* horizontal spacing between equally important elements can increase the readability of the text */
+/* float property is used to place an element on the left or right of its container, allowing other content to wrap aroundit */
+.right {
+	float: right;
+}
+
+.lg {
+	height: 10px;
+}
+
+.lg,
+.md {
+	background-color: black;
+	/* there is still small border at the bottom of .lg element, reset border */
+	border: 0;
+}
+
+.sm-text {
+	/* rem unit stands for root em, is relative to the font size of the html element. */
+	/* roughly 13.6px (remember that we set the html to have a font size set to 16px */
+	font-size: 0.85rem;
+}
+
+.calories-info h1 {
+	margin: -5px -2px;
+	/* large font size of number 230 is causing it to overflow. */
+	/* give it property overflow and set to hidden to avoid this */
+	overflow: hidden;
+}
+
+.calories-info span {
+	font-size: 1.2em;
+	/* typography is often more art than science. you may have to tweak things like alignment until it looks correct */
+	/* this will shift number 230 into place */
+	margin-top: -7px;
+}
+
+.md {
+	height: 5px;
+}
+
+.indent {
+	margin-left: 1em;
+}
+
+/* target all p in the daily-value section */
+/* :not pseudo-selector can be used to select all elements that do not match the given CSS rule */
+/* select all .daily-value p selector exclude the .no-divider */
+.daily-value p:not(.no-divider) {
+	border-bottom: 1px solid #888989;
+}
+
+.dbl-indent {
+	margin-left: 2em;
+}
+
+.note {
+	font-size: 0.6rem;
+	margin: 5px 0;
+	padding: 0 8px;
+	text-indent: -8px;
+}
