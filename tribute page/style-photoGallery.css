@@ -1,0 +1,70 @@
+/* normalize box model */
+* {
+	box-sizing: border-box;
+}
+
+/* remove margin from body */
+body {
+	font-family: Arial;
+	background-color: #ebe7e7;
+}
+
+.header {
+	text-align: center;
+	padding: 32px;
+	background: #e0dddd;
+}
+
+/* flexbox is one-dimensional CSS layout approach that focuses on the flow of content. */
+/* it offers the ability to control the way items are spaced and aligned within a container. */
+#gallery {
+	/* set element to use flexbox */
+	display: flex;
+	/* flexbox can be thought of as having 2 axes, the main axis and the cross axis. */
+	/* main axis is determined by the flex-direction - is set to row or row-reverse, the main axis is horizontal */
+	/* if flex-direction is set to column or column-reverse, the main axis is vertical */
+	flex-direction: row;
+	/* images have all move onto the same row */
+	/* flex-wrap determines how your items should behave when the flex container is too small. */
+	/* setting this property to wrap will allow your items to wrap to the next row/column (depending on your main axis), */
+	/* where nowrap will prevent your items from wrapping, items may either shrink to fit or overflow. */
+	flex-wrap: wrap;
+	/* justify-content property determines how the items inside a flex container are positioned along the main axis, affecting their position and space around them. */
+	justify-content: center;
+	/* align-itmes property positions the flex content along the cross axis. */
+	/* in this case, with your flex-direction set to row, your cross axis would be vertical. */
+	/* vertically center the images */
+	align-items: center;
+	padding: 0 4px;
+}
+
+/* images are currently too large */
+#gallery img {
+	width: 25%;
+	height: 300px;
+	/* some images have become distorted. this is because the images have different aspect ratios. */
+	/* rather than setting each aspect ration individually, you can use object-fit */
+	/* this will tell the images to fill the img container while maintaining aspect ratio, resulting in cropping to fit. */
+	object-fit: cover;
+	/* images need some space between them. */
+	margin-top: 8px;
+	padding: 0 4px;
+	/* smooth out images */
+	border-radius: 10px;
+}
+
+/* media query for screens smaller than 800px in width */
+/* this will convert the gallery to a two-column layout */
+@media (max-width: 800px) {
+	#gallery img {
+		width: 50%;
+	}
+}
+
+/* media query for screens smaller than 600px wide */
+/* this will make the gallery a single-column layout */
+@media (max-width: 600px) {
+	#gallery img {
+		width: 100%;
+	}
+}
