@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- important meta element for accessibility and SEO. -->
+		<!-- the value of the content attribute is used by search engines to provide a description of your page -->
+		<meta name="description" content="quiz" />
+		<title>Quiz</title>
+		<link rel="stylesheet" href="style-quiz.css" />
+	</head>
+	<body>
+		<!-- navigation is a core part of accessibility, and screen readers rely on -->
+		<!-- this is accomplished with semantic HTML elements - header, main, footer -->
+		<!-- header element will be used to introduce the page -->
+		<header>
+			<!-- scalable vector graphics (SVG) is the image to be scaled without affecting the resolution of the resultant image -->
+			<img
+				src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+				alt="logo of fcc quiz"
+				id="logo"
+			/>
+			<h1>HTML/CSS Quiz</h1>
+			<nav>
+				<!-- navigation using unordered list -->
+				<ul>
+					<!-- to be able to navigate within the page, give each anchor element an href corresponding to the id of the h2 elements -->
+					<li><a href="#student-info" accesskey="i">INFO</a></li>
+					<li><a href="#html-questions" accesskey="h">HTML</a></li>
+					<li><a href="#css-questions" accesskey="c">CSS</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- main element will contain the core content of the page -->
+		<main>
+			<!-- separate content using section elements -->
+			<form
+				action="https://freecodecamp.org/practice-project/accessibility-quiz"
+				method="post"
+			>
+				<!-- increase the page accessibility using role attribute to indicate the purpose behind an element  on the page to assistive tech -->
+				<!-- role attributes is part of the web accessibility initiative (WAI) -->
+				<!-- region role requires visible label, and should be reference by aria-labelledby attribute -->
+				<section role="region" aria-labelledby="student-info">
+					<h2 id="student-info">Student information</h2>
+					<!-- it is important to link each input to the corresponding label element. -->
+					<!-- this is done by giving the label a for attribute, which contains the id of the input -->
+					<!-- give each input an appropriate type and name attribute. -->
+					<div class="info">
+						<label for="student-name">name</label>
+						<input
+							type="text"
+							id="student-name"
+							placeholder="student's name"
+							name="student-name"
+						/>
+					</div>
+					<div class="info">
+						<label for="email-address">email</label>
+						<input type="email" id="email-address" name="email-address" />
+					</div>
+					<div class="info">
+						<label for="date-of-birth"
+							>D.O.B.<span class="sr-only">(Date of Birth)</span></label
+						>
+						<input type="date" id="date-of-birth" name="date-of-birth" />
+					</div>
+				</section>
+				<section role="region" aria-labelledby="html-questions">
+					<h2 id="html-questions">HTML questions</h2>
+					<div class="question-block">
+						<p>1</p>
+						<fieldset class="question" name="question-one">
+							<legend>
+								The legend element represents a caption for the content of its
+								parent fieldset element
+							</legend>
+							<ul class="answers-list">
+								<li>
+									<label for="question-one-true"
+										><input
+											type="radio"
+											id="question-one-true"
+											value="true"
+											name="question-one"
+										/>true</label
+									>
+								</li>
+								<li>
+									<label for="question-one-false"
+										><input
+											type="radio"
+											id="question-one-false"
+											value="false"
+											name="question-one"
+										/>false</label
+									>
+								</li>
+							</ul>
+						</fieldset>
+					</div>
+					<div class="question-block">
+						<p>2</p>
+						<fieldset class="question" name="question-two">
+							<legend>
+								A label element nesting an input element is required to have a
+								for attribute with the same value as the input's id
+							</legend>
+							<ul class="answers-list">
+								<li>
+									<label for="question-two-true"
+										><input
+											type="radio"
+											id="question-two-true"
+											value="true"
+											name="question-two"
+										/>true</label
+									>
+								</li>
+								<li>
+									<label for="question-two-false"
+										><input
+											type="radio"
+											id="question-two-false"
+											value="false"
+											name="question-two"
+										/>false</label
+									>
+								</li>
+							</ul>
+						</fieldset>
+					</div>
+				</section>
+				<section role="region" aria-labelledby="css-questions">
+					<h2 id="css-questions">CSS questions</h2>
+					<div class="formrow">
+						<div class="question-block">
+							<label for="developer">Are you a frontend developer?</label>
+						</div>
+						<div class="answer">
+							<select name="developer" id="developer" required>
+								<option value="">Select an option</option>
+								<option value="yes">Yes</option>
+								<option value="no">No</option>
+							</select>
+						</div>
+						<div class="question-block">
+							<label for="question">Do you have any questions:</label>
+						</div>
+						<div class="answer">
+							<textarea
+								name="question"
+								id="question"
+								cols="30"
+								rows="10"
+								placeholder="type your question here"
+							></textarea>
+						</div>
+					</div>
+				</section>
+				<button type="submit">Submit</button>
+			</form>
+		</main>
+		<footer>
+			<address>
+				<a href="https://freecodecamp.org">freeCodeCamp</a> <br />
+				San Francisco <br />
+				California <br />
+				USA
+			</address>
+		</footer>
+	</body>
+</html>
